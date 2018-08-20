@@ -1,0 +1,50 @@
+body {
+    background: #C8CAC8;
+}
+
+.container {
+    background: #DAD5D7;
+    box-sizing: border-box;
+    height: 80vh;
+    width: 50vh;
+    margin: 10vh auto;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(5px, 12vw));
+    grid-template-rows: repeat(13, minmax(5px, 1fr));
+    grid-gap: 1vh;
+    padding: 0 1vw 1vw 1vw;
+}
+
+
+.item {
+    background: #EB8B70;
+    grid-row: span 6 ; // make every column 6 rows tall
+}
+
+// start every column number at the same numbered track number
+$item: item;
+@for $i from 1 through 12 {
+    .#{$item}:nth-child(#{$i}) {
+    grid-column-start: $i ;
+    }
+}
+
+.item:nth-child(7) {
+    grid-row: 2 / 9;
+}
+
+.item:nth-child(8) {
+    grid-row: 4 / 11;
+}
+
+.item:nth-child(9) {
+    grid-row: 7 / 13;
+}
+
+.item:nth-child(10) {
+    grid-row: 6 / 12;
+}
+
+.item:nth-child(11) {
+    grid-row: 3 / 10;
+}

@@ -1,0 +1,191 @@
+/* ************************************** */
+/* ************* Variables ************** */
+/* ************************************** */
+
+// colors
+$red: #FB5F49;
+$white: #fff;
+$grey-light: #eee;
+$grey-medium: #aaa;
+$grey-dark: #777;
+$black: #000;
+
+// widths
+$bigger-than: max-width;
+$smaller-than: min-width;
+$desktop: 1140px;
+$tablet: 900px;
+$mobile: 764px;
+
+
+// font weights
+$weights: (
+    thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    black:900
+);
+
+
+/* ************************************** */
+/* *************** Global *************** */
+/* ************************************** */
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+// Example: .font-thin, .font-100 {font-weight: 100; }
+@each $weight in $weights {
+    .font-#{nth($weight, 1)}, .font-#{nth($weight, 2)}{
+        font-weight: #{nth($weight, 2)};
+    } 
+}
+
+
+.monospace {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.serif {
+    font-family: 'Merriweather', serif;
+}
+
+.sanserif {
+    font-family: 'Roboto', sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.none {
+    display: none;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    margin: 0 auto; // get rid of browser margin styling
+}
+
+div {
+    box-sizing: border-box;
+}
+
+
+/* ************************************** */
+/* **************** Main **************** */
+/* ************************************** */
+
+body {
+    background-color: $grey-dark;
+}
+
+p, span, textarea, div, button {
+    font-family: 'Merriweather', serif;
+    font-weight: 100; // make 100 default instead of 400
+    font-style: italic;
+    color: $grey-dark;
+}
+
+h1, h2, h3, h4, h5 ,h6 { 
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400; // make 400 default instead of 500
+    font-style: normal;
+    color: $red;
+}
+
+
+
+.container {
+    max-width: $desktop;
+    margin: 10px 20px 40px 10px;
+    background: $grey-light;
+    padding: 2rem;
+    box-shadow: 10px 10px 0px 2px $red;
+    @media only screen and ($smaller-than: calc(#{$desktop} + 30px) ){
+        margin: 20px auto; // center the <div>
+        margin-bottom: 40px;
+    }
+}
+
+.text {
+    border: 1px solid $red;
+    background-color: $grey-light;
+}
+
+
+/* ************************************** */
+/* **************** Grid **************** */
+/* ************************************** */
+
+
+article {
+    border: 2px solid $grey-dark;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: $white;
+    border-radius: 5px;
+    
+    &.flex {
+        flex-flow: column;
+        img {
+            order: -1; // put above everything that doesn't have order
+            align-self: center; // stop stretching
+            width: 100%; // don't go beyond width of article
+            border: 1px solid $grey-light;
+            margin-bottom: 20px; 
+            transition: 0.1s;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            &:hover {
+                cursor: pointer;
+                opacity: 0.5;
+                transition: 0.1s;
+            }
+        }
+        
+        h2 {
+            order: -2; // put above img
+            @media only screen and ($bigger-than: $tablet) {
+                align-self: center;
+            }
+        }
+        button {
+            padding: 1rem;
+            margin-top: auto; // keeps button pushed to bottom
+            margin-bottom: 5px;
+            border: 1px solid $white;
+            border-top: 1px solid $grey-medium;
+            background-color: $white;
+            transition: 0.2s;
+            &:hover {
+                cursor: pointer;
+                border: 1px solid $grey-dark;
+                margin-left: -4px;
+                box-shadow: 5px 5px 0 0 $grey-dark;
+                transition: 0.2s;
+            }
+        }
+    }
+}
+
+// now make grid-spefiic layout
+@supports (display: grid){
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1rem;
+    }
+
+    article {
+        margin-bottom: 0; // resets non-grid layout
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "css-grid",
+  "version": "1.0.0",
+  "description": "CSS Grid testing environment",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "fancy-log": "^1.3.2"
+  },
+  "scripts": {},
+  "author": "Ethan Barrett",
+  "license": "ISC"
+}
