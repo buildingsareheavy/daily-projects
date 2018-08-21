@@ -1,0 +1,102 @@
+body {
+  background: pink;
+  padding: 100px;
+  padding: 10vh 10vw; }
+
+div {
+  min-height: 200px;
+  max-height: 800px;
+  height: 50vh;
+  min-width: 200px;
+  max-height: 800px;
+  width: 50vw;
+  margin: 0 auto; }
+
+.flex {
+  text-align: center;
+  display: table;
+  color: pink; }
+  .flex h1 {
+    display: table-cell;
+    vertical-align: middle; }
+
+@supports (display: flex) {
+  .flex {
+    display: flex;
+    justify-content: center; }
+    .flex h1 {
+      align-self: center; } }
+
+hr {
+  margin: 100px auto;
+  max-width: 80%; }
+
+.one {
+  background: rgba(255, 100, 0, 0.3);
+  transition: 0.2s;
+  cursor: pointer; }
+  .one:hover .two {
+    transform: translate(-20px, -20px);
+    transition: 0.2s; }
+  .one:hover .three {
+    transform: translate(40px, 40px);
+    transition: 0.2s; }
+    .one:hover .three h1 {
+      transform: translate(-20px, -20px);
+      transition: 0.2s; }
+
+.two {
+  background: rgba(0, 255, 0, 0.3);
+  transition: 0.2s; }
+
+.three {
+  background: rgba(255, 0, 0, 0.3);
+  transition: 0.2s; }
+  .three h1 {
+    transition: 0.2s; }
+
+.four {
+  background: rgba(100, 100, 255, 0.3);
+  transition: 0.2s;
+  cursor: pointer; }
+  .four:hover {
+    transform: skew(-5deg, -5deg);
+    transition: 0.2s; }
+  .four:hover .five {
+    transform: scale3d(1.05, 1.09, 1);
+    transition: 0.2s; }
+  .four:hover .six {
+    transform: rotate(5deg);
+    transition: 0.2s; }
+    .four:hover .six h1 {
+      transform: rotate(-5deg) skew(5deg, 5deg);
+      transition: 0.2s; }
+
+.five {
+  background: rgba(0, 255, 255, 0.3);
+  transition: 0.2s; }
+
+.six {
+  background: rgba(255, 100, 100, 0.3);
+  transition: 0.2s; }
+  .six h1 {
+    transition: 0.2s; }
+
+.seven {
+  background: rgba(100, 100, 100, 0.3);
+  transition: 0.2s;
+  cursor: pointer; }
+  .seven:hover .eight {
+    transform: scaleY(1.15);
+    transition: 0.2s; }
+  .seven:hover .nine {
+    transform: scaleX(1.1);
+    transition: 0.2s; }
+
+.eight {
+  background: rgba(255, 100, 100, 0.3);
+  transition: 0.2s; }
+
+.nine {
+  background: rgba(255, 100, 100, 0.3);
+  transition: 0.2s; }

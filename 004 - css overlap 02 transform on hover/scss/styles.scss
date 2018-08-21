@@ -1,0 +1,143 @@
+$transition: 0.2s;
+
+body {
+    background: pink;
+    padding: 100px; //fallback
+    padding: 10vh 10vw;
+}
+
+div {
+    min-height:200px; //fallback
+    max-height: 800px; //fallback
+    height: 50vh;
+    min-width: 200px; //fallback
+    max-height: 800px; //fallback
+    width: 50vw;
+    margin: 0 auto;
+}
+
+// if flex isn't supported
+.flex {
+    text-align: center; // non-flex solution
+    display: table; // non-flex solution
+    color: pink; 
+    h1 {
+        display: table-cell; // non-flex solution
+        vertical-align:middle; // non-flex solution
+    }
+}
+
+
+// if flex is supported
+@supports(display: flex){
+    .flex {
+        display: flex;
+        justify-content: center; // horizontally center items inside
+        h1 {           
+            align-self: center; // vertically center item
+        }
+    }
+}
+
+hr {
+    margin: 100px auto;
+    max-width: 80%;
+}
+
+// First
+
+.one {
+    background: rgba(255,100,0,0.3);
+    transition: $transition;
+    cursor: pointer;
+    &:hover .two {
+        transform: translate(-20px, -20px);
+        transition: $transition;
+    }
+    &:hover .three {
+        transform: translate(40px, 40px);
+        transition: $transition;
+        h1 {
+            transform: translate(-20px, -20px);
+            transition: $transition;
+        }
+    }
+}
+
+.two {
+    background: rgba(0,255,0,0.3); 
+    transition: $transition;
+}
+
+.three {
+    background: rgba(255,0,0,0.3);
+    transition: $transition;
+    h1 {
+        transition: $transition;
+    }
+}
+
+// Second
+
+.four {
+    background: rgba(100,100,255,0.3);
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+        transform: skew(-5deg, -5deg);
+        transition: $transition;
+    }
+    &:hover .five {
+        transform: scale3d(1.05, 1.09, 1);
+        transition: $transition;
+    }
+    &:hover .six {
+        transform: rotate(5deg);
+        transition: $transition;
+        h1 {
+          transform: rotate(-5deg) skew(5deg, 5deg);
+          transition: $transition;
+         }
+    }
+}
+
+.five {
+    background: rgba(0,255,255,0.3);
+    transition: $transition;
+}
+
+
+.six {
+    background: rgba(255,100,100,0.3);   
+    transition: $transition;
+    h1 {
+        transition: $transition;
+    }
+}
+
+// Third
+
+.seven {
+    background: rgba(100,100,100,0.3);  
+    transition: $transition;
+    cursor: pointer;
+    &:hover .eight {
+        transform: scaleY(1.15); 
+        transition: $transition;
+    }
+    &:hover .nine {
+        transform: scaleX(1.1);  
+        transition: $transition;
+    }
+}
+
+.eight {
+    background: rgba(255,100,100,0.3);  
+    transition: $transition;  
+}
+
+.nine {
+    background: rgba(255,100,100,0.3);   
+    transition: $transition;
+}
+
