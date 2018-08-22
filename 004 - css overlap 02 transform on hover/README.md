@@ -1,4 +1,4 @@
-# 004 - CSs Overlap 02 Transform on Hover
+# 004 - CSS Overlap 02 Transform on Hover
 
 Another color study that focuses on div overlapping with the `transform` property in CSS. I feel like there should be an easier way to repeat `{ transition: $transition; }` over and over again.
 
