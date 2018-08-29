@@ -1,0 +1,131 @@
+body {
+    background: Khaki;
+  }
+    
+  div {
+      margin: 25vh auto 45vh auto;
+      width: 50vw;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      h1 {
+        color: Khaki;
+        font-size: 2rem;
+        align-self: center;
+      }
+      &::before, &::after {
+        width: 50vw; /* make same as parent */
+        height: 50vh; /* make same as parent */
+        position: absolute; /* needs to be absolute for z-index */
+        z-index: -1;  /* to be below the parent element */
+        transition: all 0.2s;
+      }
+  }
+  
+  .one { 
+        background-color: coral;
+      &::after, &::before {
+        content: '';
+    }
+      &::before {
+        background: gold;
+    }
+      &::after {
+        background: lightgreen;
+    }
+       &:hover::after {
+        transform: rotate(7deg);
+        margin: -15px;
+    }
+       &:hover::before {
+        margin: 15px;
+        transform: rotate(2deg) skew(10deg);
+    }
+  }
+  
+  
+  .two {
+    background: transparent;
+    background: skyblue;
+    &, &::after, &::before {
+        width: 50vh; /* match height, so it's a perfect circle */
+        mix-blend-mode: multiply;
+        transition: all .5s;
+    }
+    & h1 {
+        transition: all .5s;
+    }
+    &:hover {
+        transform: translateY(-25vh);
+    }
+    &:hover, &:hover::before, &:hover::after {
+        border-radius: 50%;
+    }
+    &:hover h1 {
+        margin-top: calc(130vh/3);
+    }
+    &::before, &::after {
+        font-size: 2rem;
+        font-weight: 900;
+
+        color: transparent;
+    }
+    &::before {
+        content: '::before';
+        background: yellow;
+    }
+    &::after {
+        content: '::after';
+        text-align: right;
+        background: hotpink;
+    }
+    &:hover::before {
+        transform: translate(-33%, 66%);
+        color: black;
+    }
+    &:hover::after {
+        transform: translate(33%, 66%);
+        color: black;
+    }
+  }
+
+
+  .three {
+    background: navy;
+    transition: all 1s;
+    &:hover {
+        width: 45vw;
+    }
+    &::before, &::after {
+        content: '';
+        opacity: 0;
+        transition: all 1s;
+    }
+    &::before {
+        background: orangered;
+    }
+    &::after {
+        background: lightgreen;
+    }
+    &:hover::before {
+        animation: threeBefore 1s infinite ease-in-out;
+        opacity: 1;
+    }
+    &:hover::after {
+        animation: threeAfter 1s infinite ease-in-out;
+        opacity: 1;
+    }
+  }
+  
+  @keyframes threeBefore {
+      from {padding: 10px; transform: rotate(5deg);}
+      50% {padding: 0px; transform: rotate(-5deg);}
+      to {padding: 10px; transform: rotate(5deg);}
+  }
+
+  @keyframes threeAfter {
+      from {margin: -20px -15px 0 20px; padding: 15px; transform: scale(1.025) rotate(-6deg);}
+      50% {margin: 0 15px 10px -20px; padding: 5px; transform: scale(1) rotate(10deg);}
+      to {margin: -20px -15px 0px 20px; padding: 15px; transform: scale(1.025) rotate(-6deg);}
+  }
