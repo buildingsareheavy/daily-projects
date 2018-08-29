@@ -1,0 +1,77 @@
+body {
+    background: #C8CAC8;
+}
+
+.container {
+    background: #DAD5D7;
+    box-sizing: border-box;
+    height: 90vh;
+    width: 60vh;
+    margin: 5vh auto;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(5px, 12vw)); 
+    grid-template-rows: repeat(12, minmax(5px, 1fr)) 0.25fr; // fixed the last row to better reflect the poster design
+    grid-gap: 1vh;
+    padding: 0 1vw 1vw 1vw;
+    font-family: sans-serif;
+}
+
+
+.item {
+    background: #EB8B70;
+    grid-row: 1 / span 6 ; // make every column 6 rows tall starting at 1
+    // if you didn't start at 1, then the text overlay would move it
+}
+
+// start every column number at the same numbered track number
+$item: item;
+@for $i from 1 through 12 {
+    .#{$item}:nth-child(#{$i}) {
+    grid-column-start: $i;
+    grid-column-end: $i + 1; // added grid-column-end so when I added the text over top it didn't move it.
+    }
+}
+
+// I added spans on each grid-row instead of numbers because it made more sense to think about it visually
+
+.item:nth-child(7) {
+    grid-row: 2 / span 7;
+}
+
+.item:nth-child(8) {
+    grid-row: 4 / span 7;
+}
+
+.item:nth-child(9) {
+    grid-row: 7 / span 6;
+}
+
+.item:nth-child(10) {
+    grid-row: 6 / span 6;
+}
+
+.item:nth-child(11) {
+    grid-row: 3 / span 7;
+}
+
+.text {
+  font-size: 1vh;
+  grid-column: 4 / 7; // since all text stays in the these columns put them all together
+}
+
+.t1 {
+  grid-row: 4 / 7;
+}
+
+.t2 {
+  grid-row: 10;
+  font-size: 2.75vh; // making it dependent on the height keeps it relative
+  font-weight: 900;
+  margin: 0;
+  align-self: end;
+}
+
+.t3 {
+  grid-row: 11;
+  font-size: 1vh;
+}
