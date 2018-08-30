@@ -2,4 +2,4 @@
 
 Short description
 
-[codepen link][https://codepen.io/buildingsareheavy/]
+[codepen link](https://codepen.io/buildingsareheavy/)

@@ -6,4 +6,4 @@ Essentially the child div will most easily move to the right and down. For the o
 
 Nothing too crazy with CSS, just more of an observation exercise.
 
-[codepen link][https://codepen.io/buildingsareheavy/pen/pOzxOL]
+[codepen link](https://codepen.io/buildingsareheavy/pen/pOzxOL)

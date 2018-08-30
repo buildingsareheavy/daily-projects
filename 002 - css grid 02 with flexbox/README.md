@@ -17,4 +17,4 @@ Also added an `each` loop in SCSS for font-weights.
 ```
 
 
-[codepen link][https://codepen.io/buildingsareheavy/pen/rZBqJZ]
+[codepen link](https://codepen.io/buildingsareheavy/pen/rZBqJZ)

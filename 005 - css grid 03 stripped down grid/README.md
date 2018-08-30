@@ -6,4 +6,4 @@ Absolutely I could add more to this and make it look more interesting, but it's 
 
 Nothing spectacular, just a clean reference.
 
-[codepen link][https://codepen.io/buildingsareheavy/pen/pOvpOv]
+[codepen link](https://codepen.io/buildingsareheavy/pen/pOvpOv)

@@ -11,4 +11,4 @@ I also wish there was a way to do something like:
 }
 ```
 
-[codepen link][https://codepen.io/buildingsareheavy/pen/yxyoEy]
+[codepen link](https://codepen.io/buildingsareheavy/pen/yxyoEy)

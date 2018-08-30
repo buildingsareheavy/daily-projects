@@ -1,0 +1,45 @@
+$pink-dark: #FA71B9;
+$pink-light: #FDBAF5;
+$tan: #E6E8D4;
+$green-light: #a7cb58;
+$green-lighter: #BCE463;
+$green-dark: #22DA27;
+$green-darker: #1ba520;
+
+body {
+    background: linear-gradient(150deg, $pink-light, $pink-dark);
+    background-attachment: fixed; // stops background from repeating
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr .5fr 1fr;
+    grid-template-rows: 1fr 1fr 1.5fr 1fr 1fr;
+    height: 75vh; // sets ratio
+    width: 110vh; // sets ratio
+    margin: 10vh auto;
+}
+
+.tan-top {
+    background: $tan;
+    grid-area: 1 / 4 / 5 / 6 ; // row start / column start / row end / column end
+    clip-path: polygon(0 22%, 100% 10%, 100% 78%, 0% 100%);
+}
+
+.tan-bottom {
+    background: $tan;
+    grid-area: 3 / 2 / 7 / 6; 
+    clip-path: polygon(0 60%, 100% 30%, 100% 70%, 0% 100%);
+}
+
+.green-light {
+    background: linear-gradient(-150deg, $green-light, $green-lighter);
+    grid-area: 3 / 3 / 5 / 5 ;
+    clip-path: polygon(0 25%, 100% 0%, 100% 72%, 0% 100%);
+}
+
+.green-dark {
+    background: linear-gradient(150deg, $green-dark, $green-darker);
+    grid-area: 2 / 4 / 4 / 5 ;
+    clip-path: polygon(0 0, 100% 40%, 100% 40%, 0% 100%);
+}

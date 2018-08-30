@@ -1,0 +1,31 @@
+body {
+  background: linear-gradient(150deg, #FDBAF5, #FA71B9);
+  background-attachment: fixed; }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 2fr 0.5fr 1fr;
+  grid-template-rows: 1fr 1fr 1.5fr 1fr 1fr;
+  height: 75vh;
+  width: 110vh;
+  margin: 10vh auto; }
+
+.tan-top {
+  background: #E6E8D4;
+  grid-area: 1 / 4 / 5 / 6;
+  clip-path: polygon(0 22%, 100% 10%, 100% 78%, 0% 100%); }
+
+.tan-bottom {
+  background: #E6E8D4;
+  grid-area: 3 / 2 / 7 / 6;
+  clip-path: polygon(0 60%, 100% 30%, 100% 70%, 0% 100%); }
+
+.green-light {
+  background: linear-gradient(-150deg, #a7cb58, #BCE463);
+  grid-area: 3 / 3 / 5 / 5;
+  clip-path: polygon(0 25%, 100% 0%, 100% 72%, 0% 100%); }
+
+.green-dark {
+  background: linear-gradient(150deg, #22DA27, #1ba520);
+  grid-area: 2 / 4 / 4 / 5;
+  clip-path: polygon(0 0, 100% 40%, 100% 40%, 0% 100%); }

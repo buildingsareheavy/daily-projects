@@ -6,4 +6,4 @@ I also remembered that you can add `transition: all 1s` to the parent element an
 
 side note: Took some time off to visit some friends from Denver that were in CDMX to tour them around the city. 
 
-[codepen link][https://codepen.io/buildingsareheavy/full/qMNedK/]
+[codepen link](https://codepen.io/buildingsareheavy/full/qMNedK/)
