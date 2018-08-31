@@ -11,4 +11,4 @@ To get running, just `cd` into desired directory and type `gulp` to run everythi
 
 ## Resources
 
-I will do my best to add a short description and a link to a codepen.io for each project in a *README.md* file.
+I will do my best to add a short description and a link to a [codepen.io](https://codepen.io/buildingsareheavy/pens/public/#) for each project in a *README.md* file.
