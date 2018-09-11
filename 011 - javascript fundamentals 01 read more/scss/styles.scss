@@ -1,0 +1,44 @@
+/* write all your css / scss here and will compile to styles.css */
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:600,900');
+
+body {
+    background: peachpuff;
+}
+
+.more-link {
+    display: inline-block;
+    color: black;
+    margin-left: 5px;
+    animation: readMore 1s infinite ease-in-out;
+}
+
+.container {
+    max-width: 600px;
+    text-align: center;
+    @media (min-width: 600px){
+        margin: 100px auto;
+    }
+}
+
+p {
+    background: powderblue;
+    font-size: 1.25rem;
+    padding: 2rem;
+    border: 5px solid tomato;
+    font-weight: 600;
+    font-family: 'Noto Serif JP', sans-serif;
+}
+
+
+#read-more {
+    p {
+        background: deepskyblue;
+    }
+}
+
+@keyframes readMore {
+    from {text-shadow: 0 0 1px black;}
+    50% {text-shadow: 0 0 0 black;}
+    to {text-shadow: 0 0 1px black;}
+}
