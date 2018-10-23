@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+JP");
+body {
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  background: lavender;
+  font-family: 'Inconsolata', sans-serif; }
+
+#container {
+  height: 50vh;
+  overflow-x: auto;
+  border: 5px solid black;
+  -ms-scroll-snap-type: mandatory;
+  -webkit-scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory;
+  -ms-scroll-snap-type: y mandatory;
+  -webkit-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
+  -ms-scroll-snap-points-y: repeat(25vh);
+  -webkit-scroll-snap-points-y: repeat(25vh);
+  scroll-snap-points-y: repeat(25vh); }
+  #container div {
+    height: 25vh;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative; }
+  #container p {
+    font-size: 3rem;
+    margin: 0;
+    padding-top: 9vh;
+    font-family: 'Noto Serif JP', serif; }
+
+@supports (display: grid) {
+  #container div {
+    display: grid;
+    align-items: center; }
+    #container div p {
+      padding-top: 0; } }
+
+.one {
+  background: paleturquoise; }
+
+.two {
+  background: powderblue; }
+
+.three {
+  background: lightblue; }
+
+.four {
+  background: skyblue; }
+
+.five {
+  background: pink; }
+
+.six {
+  background: salmon; }
