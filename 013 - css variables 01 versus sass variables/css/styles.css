@@ -1,0 +1,35 @@
+html {
+  background: beige; }
+
+.container {
+  border: 2px solid salmon;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: white;
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin: 1rem 0.5rem; }
+
+div {
+  text-align: center;
+  background: pink;
+  color: salmon; }
+  div.b {
+    background: gold; }
+  div.c {
+    color: violet; }
+    div.c span {
+      background: violet;
+      color: pink;
+      padding: 5px; }
+
+@supports (--css: variables) {
+  :root {
+    --bg-color: plum;
+    --fg-color: blue; }
+  .container.second div {
+    background: var(--bg-color);
+    color: var(--fg-color); }
+  .container.second .e {
+    --fg-color: cornsilk; } }

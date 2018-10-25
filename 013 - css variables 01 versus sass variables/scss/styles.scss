@@ -1,0 +1,55 @@
+$bg-color: pink;
+$fg-color: salmon;
+
+html {
+  background: beige;
+}
+
+.container {
+  border: 2px solid $fg-color;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: white;
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin: 1rem 0.5rem;
+}
+
+div {
+  text-align: center;
+  background: $bg-color;
+  color: $fg-color;
+  &.b {
+    $bg-color: gold;
+    background: $bg-color;
+  }
+  &.c {
+    $fg-color: violet;
+    color: $fg-color;
+    span {
+      background: $fg-color;
+      color: $bg-color;
+      padding: 5px;
+    }
+  }
+}
+
+// Second
+
+@supports (--css: variables) {
+  :root {
+    --bg-color: plum;
+    --fg-color: blue;
+  }
+
+  .container.second {
+    div {
+      background: var(--bg-color);
+      color: var(--fg-color);
+    }
+    .e {
+      --fg-color: cornsilk;
+    }
+  }
+}

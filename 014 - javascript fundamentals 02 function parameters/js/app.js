@@ -1,4 +1,4 @@
-console.log("vendor.js is working and loaded in <head>");
+console.log("app.js is working and loaded at the bottom of <body>");
 
 // provide variable values to pass through
 function displayName(msgText, btnText, msgType) {
@@ -47,10 +47,10 @@ function displayName(msgText, btnText, msgType) {
   }
 }
 
-// call function and add parameters
+// call function to run intially and add parameters
 displayName("First", "Add more sections below", "initial");
 
-// create a button when the button is clicked
+// run the function again when the button is clicked and add new parameters
 var btn = document.querySelector("button");
 btn.onclick = function() {
   displayName("This one got added", "Close this section", "more");
