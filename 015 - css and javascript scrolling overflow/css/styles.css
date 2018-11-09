@@ -1,0 +1,50 @@
+/* write all your css / scss here and will compile to styles.css */
+body {
+  background: beige;
+  text-align: center; }
+  body hr {
+    margin: 3rem; }
+
+div {
+  margin: 0 auto;
+  width: 50vw;
+  height: 20vw; }
+  div img {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: -6px; }
+
+.one {
+  border: 10px solid skyblue;
+  overflow: scroll; }
+  .one img {
+    background: tomato;
+    padding: 5px; }
+
+.two {
+  border: 10px solid pink;
+  overflow: hidden; }
+  .two img {
+    animation: two 15s ease-in-out infinite; }
+
+@keyframes two {
+  10% {
+    transform: translateY(0%); }
+  85% {
+    transform: translateY(-95.6%); }
+  100% {
+    transform: translateY(0%); } }
+
+.three {
+  overflow: scroll;
+  border: 20px solid;
+  border-image: url("https://placeimg.com/110/500/any") 10; }
+
+.btn-three {
+  margin: 1rem;
+  padding: 1rem;
+  background: thistle;
+  border: 5px solid rebeccapurple;
+  color: rebeccapurple;
+  font-weight: bold;
+  cursor: pointer; }
