@@ -1,76 +1,76 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+JP');
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif+JP");
 
 body {
-    margin: 0;
-    padding: 2rem;
-    text-align: center;
-    background: lavender;
-    font-family: 'Inconsolata', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  background: lavender;
+  font-family: "Inconsolata", sans-serif;
 }
 
 #container {
-    height: 50vh;
-    overflow-x: auto;
-    border: 5px solid black;
+  height: 50vh;
+  overflow-x: auto;
+  border: 5px solid black;
 
-    -ms-scroll-snap-type: mandatory;
-    -webkit-scroll-snap-type: mandatory;
-    scroll-snap-type: mandatory; // this works for Firefox and Safari, but not Chrome
+  -ms-scroll-snap-type: mandatory;
+  -webkit-scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory; // this works for Firefox and Safari, but not Chrome
 
-    -ms-scroll-snap-type: y mandatory;
-    -webkit-scroll-snap-type: y mandatory;
-    scroll-snap-type: y mandatory; // this works for Chrome and Safari, but not Firefox
+  -ms-scroll-snap-type: y mandatory;
+  -webkit-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; // this works for Chrome and Safari, but not Firefox
 
-    -ms-scroll-snap-points-y: repeat(25vh);
-    -webkit-scroll-snap-points-y: repeat(25vh);
-    scroll-snap-points-y: repeat(25vh);
+  -ms-scroll-snap-points-y: repeat(25vh);
+  -webkit-scroll-snap-points-y: repeat(25vh);
+  scroll-snap-points-y: repeat(25vh);
 
-    div {
+  div {
     height: 25vh;
     width: 100%;
     scroll-snap-align: start; // not necessary in Firefox, but required for Chrome and Safari
     position: relative; // not necessary in Firefox and Safari, but required for Chrome
-    }
-    p {
-        font-size: 3rem;
-        margin: 0; // fallback for no grid support
-        padding-top: 9vh; // fallback for no grid support
-        font-family: 'Noto Serif JP', serif;
-    }
+  }
+  p {
+    font-size: 3rem;
+    margin: 0; // fallback for no grid support
+    padding-top: 9vh; // fallback for no grid support
+    font-family: "Noto Serif JP", serif;
+  }
 }
 
 @supports (display: grid) {
-    #container {
-        div {
-            display: grid;
-            align-items: center;
-            p {
-                padding-top: 0; // reset fallback
-            }
-        }
+  #container {
+    div {
+      display: grid;
+      align-items: center;
+      p {
+        padding-top: 0; // reset fallback
+      }
     }
+  }
 }
 
 .one {
-    background: paleturquoise;
+  background: paleturquoise;
 }
 
 .two {
-    background: powderblue;
+  background: powderblue;
 }
 
 .three {
-    background: lightblue;
+  background: lightblue;
 }
 
 .four {
-    background: skyblue;
+  background: skyblue;
 }
 
 .five {
-    background: pink;
+  background: pink;
 }
 
 .six {
-    background: salmon;
+  background: salmon;
 }

@@ -1,35 +1,39 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var browserSync = require("browser-sync");
-var log = require("fancy-log");
+"use strict";
 
-// start 'sass'
-gulp.task("sass", function() {
-  gulp
-    .src("scss/styles.scss")
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const browserSync = require("browser-sync");
+const log = require("fancy-log");
+
+// start 'scss'
+function scss() {
+  return gulp
+    .src("./scss/styles.scss")
     .pipe(sass({ includePaths: ["scss"] }))
     .on("error", log)
-    .pipe(gulp.dest("css"));
-});
+    .pipe(gulp.dest("./css"));
+}
 
-// start 'browser-sync'
-gulp.task("browser-sync", function() {
+// start 'bs'
+function bs() {
   // watch index.html & all .css and .js files
-  browserSync.init(["**/*.html", "**/*.css", "**/*.js"], {
+  return browserSync.init(["**/*.html", "**/*.css", "**/*.js"], {
     server: {
       baseDire: "./"
     },
-    // open in Firefox Developer Edition instead of default browser
     browser: "Firefox Developer Edition"
   });
-});
+}
 
-// combine 'sass' and 'browser-sync'
-// just run 'gulp'
+// watch for changes to .scss files and rerun 'scss'
+const watchAll = gulp.watch("./scss/*.scss", gulp.series(scss));
+
+// start 'gulp'
 gulp.task(
   "default",
-  // added gulp.series and gulp.parallel becuase of Gulp v4
-  gulp.series(gulp.parallel("sass", "browser-sync"), function() {
-    gulp.watch("scss/*.scss", ["sass"]);
+  // combines 'scss' and 'bs'
+  gulp.series(gulp.parallel(bs, scss), function() {
+    // Not sure why this needs to be declared as a variable and can't just be inside this function?
+    return watchAll;
   })
 );

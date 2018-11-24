@@ -25,10 +25,11 @@ div {
   border: 10px solid pink;
   overflow: hidden; }
   .two img {
-    animation: two 15s ease-in-out infinite; }
+    animation: two 15s ease-in-out infinite;
+    animation-delay: 2s; }
 
 @keyframes two {
-  10% {
+  0% {
     transform: translateY(0%); }
   85% {
     transform: translateY(-95.6%); }
