@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Laila");
+body {
+  background: pink;
+  font-family: "Laila", serif;
+  color: #333; }
+
+.container {
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  background: lightblue;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 3rem auto;
+  text-align: center; }
+
+.message {
+  max-width: 500px;
+  margin: 0 auto; }
+
+.message-header {
+  cursor: pointer;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 2px solid goldenrod;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem; }
+  .message-header:hover {
+    background: goldenrod; }
+
+.message-body {
+  overflow: hidden;
+  max-height: 10em;
+  border: 2px solid goldenrod;
+  transition: 0.5s ease all;
+  margin-bottom: 2rem; }
+
+.is-closed .message-body {
+  border: 0 solid goldenrod;
+  max-height: 0;
+  margin: 0; }
+
+.is-closed,
+.is-open {
+  transition: 0.2s ease all; }

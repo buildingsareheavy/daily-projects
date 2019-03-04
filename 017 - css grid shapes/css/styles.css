@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Staatliches");
+body {
+  background: lightgrey; }
+
+#header {
+  font-family: cursive;
+  text-transform: capitalize;
+  background: white;
+  padding: 2rem;
+  border-radius: 100px;
+  box-shadow: 0 5px 10px 2px grey;
+  border-top: 5px solid red;
+  border-bottom: 5px solid blue; }
+
+.container {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto; }
+
+.grid {
+  margin: 10vh auto;
+  display: grid;
+  width: 500px;
+  height: 500px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 5px; }
+
+#one {
+  background: blue;
+  clip-path: circle(50% at 50% 50%); }
+  #one .cell {
+    background: red; }
+
+.animate {
+  animation: one 2s ease-in-out; }
+
+@keyframes one {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+#two {
+  background: red;
+  border-radius: 15px;
+  border: 5px solid red; }
+  #two .cell {
+    background: blue;
+    border-radius: 15px; }
+
+#three {
+  background: red; }
+  #three .cell {
+    background: blue;
+    border-top: 5px solid red;
+    border-bottom: 5px solid red;
+    border-right: 5px solid red;
+    transform: rotate(45deg); }
+
+.spacer {
+  height: 50px; }
+
+#four {
+  background: blue;
+  transform: rotate(45deg);
+  clip-path: polygon(0% 0%, 0% 100%, 20.25% 100%, 20.25% 20.25%, 79.75% 20.25%, 79.75% 79.75%, 20.25% 79.75%, 20.25% 100%, 100% 100%, 100% 0%); }
+  #four .cell {
+    transform: rotate(-45deg);
+    background: red; }
