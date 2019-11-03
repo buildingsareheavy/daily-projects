@@ -38,7 +38,8 @@ body {
     margin: 2rem 0; }
   body,
   body input {
-    font-family: 'Roboto', sans-serif; }
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em; }
   body input {
     outline: none;
     border: none;

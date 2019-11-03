@@ -11,6 +11,7 @@ Icon?
 !.gitignore
 !readme.md
 !README.md
+!package-lock.json
 
 # ignore node/gulp dependency directories
 node_modules/
