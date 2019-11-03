@@ -8,6 +8,9 @@
   --text-muted: #e24b87;
   --time: 500ms;
   --padding: 0.5em; }
+  @media only screen and (max-width: 800px) {
+    :root {
+      font-size: 16px; } }
 
 *,
 *::before,
@@ -33,7 +36,11 @@ body {
     align-items: center;
     flex-direction: column;
     margin: 3rem auto;
+    padding: 3rem;
     border: 13px solid var(--container-border); }
+    @media only screen and (max-width: 800px) {
+      body .container {
+        margin: 1rem; } }
   body div.floating-label-container {
     margin: 2rem 0; }
   body,
@@ -43,6 +50,7 @@ body {
   body input {
     outline: none;
     border: none;
+    border-radius: 0;
     background: transparent; }
 
 .fl-regular {

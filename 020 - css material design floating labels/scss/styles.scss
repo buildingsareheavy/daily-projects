@@ -5,6 +5,9 @@
 
 :root {
   font-size: 24px;
+  @media only screen and (max-width: 800px) {
+    font-size: 16px;
+  }
   --outer-color: #ffebf3; // lavenderblush
   --bg-color: #d5ffff; // lightcyan
   --container-border: #ffd700; // gold
@@ -42,6 +45,10 @@ body {
     align-items: center;
     flex-direction: column;
     margin: 3rem auto;
+    @media only screen and (max-width: 800px) {
+      margin: 1rem;
+    }
+    padding: 3rem;
     border: 13px solid var(--container-border);
   }
 
@@ -57,6 +64,7 @@ body {
   input {
     outline: none; // RESET only ever do this if you have something visual to replace it with
     border: none; // RESET
+    border-radius: 0; // RESET
     background: transparent; // RESET
   }
 }
