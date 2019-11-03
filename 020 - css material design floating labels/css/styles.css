@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+:root {
+  font-size: 24px;
+  --outer-color: #ffebf3;
+  --bg-color: #d5ffff;
+  --container-border: #ffd700;
+  --text-color: #873a00;
+  --text-muted: #e24b87;
+  --time: 500ms;
+  --padding: 0.5em; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+body {
+  color: var(--text-color);
+  background: var(--outer-color); }
+  body h1 {
+    color: var(--text-color); }
+  body a.docs {
+    color: var(--text-muted);
+    transition: opacity var(--time); }
+    body a.docs:hover {
+      opacity: 0.75; }
+  body .container {
+    background: var(--bg-color);
+    min-height: 100vh;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem auto;
+    border: 13px solid var(--container-border); }
+  body div.floating-label-container {
+    margin: 2rem 0; }
+  body,
+  body input {
+    font-family: 'Roboto', sans-serif; }
+  body input {
+    outline: none;
+    border: none;
+    background: transparent; }
+
+.fl-regular {
+  position: relative; }
+  .fl-regular label {
+    user-select: none;
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    transition: font-size var(--time), transform var(--time); }
+  .fl-regular input {
+    color: var(--text-color);
+    box-shadow: 0px 1px 0px var(--text-muted);
+    transition: box-shadow var(--time), color var(--time); }
+    .fl-regular input:hover {
+      box-shadow: 0px 1px 0px var(--text-color); }
+    .fl-regular input:focus {
+      box-shadow: 0px 2px 0px var(--text-color); }
+    .fl-regular input:focus ~ label {
+      color: var(--text-color); }
+    .fl-regular input:focus ~ label,
+    .fl-regular input:valid ~ label {
+      font-size: 0.5em;
+      transform: translateY(-1.5em); }
+
+.fl-not-required {
+  position: relative; }
+  .fl-not-required label {
+    user-select: none;
+    position: absolute;
+    font-size: 0.5em;
+    left: 0;
+    color: var(--text-muted);
+    transform: translateY(-1.5em);
+    opacity: 0;
+    transition: opacity var(--time); }
+  .fl-not-required input {
+    color: var(--text-color);
+    box-shadow: 0px 1px 0px var(--text-muted);
+    transition: box-shadow var(--time); }
+    .fl-not-required input::placeholder {
+      color: var(--text-muted); }
+    .fl-not-required input:hover {
+      box-shadow: 0px 1px 0px var(--text-color); }
+    .fl-not-required input:focus {
+      box-shadow: 0px 2px 0px var(--text-color); }
+    .fl-not-required input:focus ~ label {
+      color: var(--text-color); }
+    .fl-not-required input:not(:placeholder-shown) ~ label {
+      opacity: 1; }
+
+.fl-outline {
+  position: relative; }
+  .fl-outline label {
+    user-select: none;
+    position: absolute;
+    top: var(--padding);
+    left: 0;
+    transform: translateX(var(--padding));
+    color: var(--text-muted);
+    background: transparent;
+    transition: font-size var(--time), transform var(--time), padding var(--time), background var(--time); }
+  .fl-outline input {
+    color: var(--text-color);
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.25em;
+    box-shadow: 0 0 0 1px var(--text-muted);
+    padding: var(--padding);
+    transition: box-shadow var(--time); }
+    .fl-outline input:hover {
+      box-shadow: 0 0 0 1px var(--text-color); }
+    .fl-outline input:focus {
+      box-shadow: 0 0 0 2px var(--text-color); }
+      .fl-outline input:focus ~ label {
+        color: var(--text-color); }
+    .fl-outline input:focus ~ label,
+    .fl-outline input:valid ~ label {
+      font-size: 0.5em;
+      transform: translateX(calc(var(--padding) * 2)) translateY(calc(var(--padding) * -2.5));
+      padding: 0 var(--padding);
+      background: var(--bg-color); }

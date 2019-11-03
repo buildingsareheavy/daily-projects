@@ -1,0 +1,198 @@
+//
+// Basic Styling
+//
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+  font-size: 24px;
+  --outer-color: #ffebf3; // lavenderblush
+  --bg-color: #d5ffff; // lightcyan
+  --container-border: #ffd700; // gold
+  --text-color: #873a00; // saddlebrown
+  --text-muted: #e24b87; // palevioletred
+  --time: 500ms;
+  --padding: 0.5em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--outer-color);
+  h1 {
+    color: var(--text-color);
+  }
+  a.docs {
+    color: var(--text-muted);
+    transition: opacity var(--time);
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  .container {
+    background: var(--bg-color);
+    min-height: 100vh;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem auto;
+    border: 13px solid var(--container-border);
+  }
+
+  div.floating-label-container {
+    margin: 2rem 0; // just to give them some breathing room
+    // padding would affect the label's position. If needed, adjust left and translateX
+  }
+  &,
+  input {
+    font-family: 'Roboto', sans-serif;
+  }
+  input {
+    outline: none; // RESET only ever do this if you have something visual to replace it with
+    border: none; // RESET
+    background: transparent; // RESET
+  }
+}
+
+//
+//
+//
+//
+//
+
+//
+// Regular Input Styling
+//
+.fl-regular {
+  position: relative;
+  label {
+    user-select: none; // So you can't double click to select this text
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    transition: font-size var(--time), transform var(--time);
+  }
+  input {
+    color: var(--text-color);
+    box-shadow: 0px 1px 0px var(--text-muted); // acting as a border-bottom
+    transition: box-shadow var(--time), color var(--time);
+    &:hover {
+      box-shadow: 0px 1px 0px var(--text-color); // acting as a border-bottom
+    }
+    &:focus {
+      box-shadow: 0px 2px 0px var(--text-color); // acting as a border-bottom
+    }
+    &:focus ~ label {
+      color: var(--text-color);
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      font-size: 0.5em;
+      transform: translateY(-1.5em);
+    }
+  }
+}
+
+//
+//
+//
+//
+//
+
+//
+// NotRequired Input Styling
+//
+.fl-not-required {
+  position: relative;
+  label {
+    user-select: none; // So you can't double click to select this text
+    position: absolute;
+    font-size: 0.5em; // because it doesn't need to transiton, so we can set the intial state to 1/2 size
+    left: 0;
+    color: var(--text-muted);
+    transform: translateY(-1.5em);
+    opacity: 0;
+    transition: opacity var(--time);
+  }
+  input {
+    color: var(--text-color);
+    box-shadow: 0px 1px 0px var(--text-muted);
+    transition: box-shadow var(--time);
+    &::placeholder {
+      color: var(--text-muted);
+    }
+    &:hover {
+      box-shadow: 0px 1px 0px var(--text-color);
+    }
+    &:focus {
+      box-shadow: 0px 2px 0px var(--text-color);
+    }
+    &:focus ~ label {
+      color: var(--text-color);
+    }
+    &:not(:placeholder-shown) ~ label {
+      opacity: 1;
+    }
+  }
+}
+
+//
+//
+//
+//
+//
+
+//
+// Outline Input Styling
+//
+.fl-outline {
+  position: relative;
+  label {
+    user-select: none; // So you can't double click to select this text
+    position: absolute;
+    top: var(--padding);
+    left: 0;
+    // We need to have translateX for the padding on border.
+    // Since we are transitioning transform and not left, we need
+    // to keep left at 0 or else the animation will get janky.
+    transform: translateX(var(--padding));
+    color: var(--text-muted);
+    background: transparent;
+    transition: font-size var(--time), transform var(--time),
+      padding var(--time), background var(--time);
+  }
+  input {
+    color: var(--text-color);
+    outline: none; // only ever do this if you have something visual to replace it with
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.25em;
+    box-shadow: 0 0 0 1px var(--text-muted);
+    padding: var(--padding);
+    transition: box-shadow var(--time);
+    &:hover {
+      box-shadow: 0 0 0 1px var(--text-color);
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px var(--text-color);
+      & ~ label {
+        color: var(--text-color);
+      }
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      font-size: 0.5em;
+      transform: translateX(calc(var(--padding) * 2))
+        translateY(calc(var(--padding) * -2.5));
+      padding: 0 var(--padding);
+      background: var(--bg-color);
+    }
+  }
+}
