@@ -1,0 +1,197 @@
+/* write all your css / scss here and will compile to styles.css */
+
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,700|DM+Serif+Display&display=swap");
+
+*,
+.sans-serif {
+  font-family: "DM Sans", sans-serif;
+}
+
+h2,
+h4,
+h5,
+h6,
+.serif {
+  font-family: "DM Serif Display", serif;
+}
+
+a.btn {
+  text-decoration: none;
+  color: currentColor;
+  background: #e3f2fd;
+  display: inline-block;
+  margin-top: 0.25em;
+  padding: 0.5em 0.75em;
+  transition: background-color 500ms;
+  &:not(:first-child) {
+    margin-right: 0.5em;
+  }
+  &:hover {
+    background: darken(#e3f2fd, 12);
+  }
+}
+
+figure {
+  margin: 0;
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  figcaption {
+    text-align: center;
+    font-size: 0.75em;
+    padding: 1em;
+    background: #eee;
+  }
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+main {
+  padding-bottom: 2em;
+}
+
+nav {
+  border-bottom: 2px solid black;
+  ul {
+    list-style: none; // reset
+    padding: 0; // reset
+    display: flex;
+    justify-content: space-around;
+    @media screen and (max-width: 500px) {
+      display: block;
+      text-align: right;
+      margin: 15px;
+    }
+    li {
+      &:not(:first-child)::after {
+        content: " \25BE"; // down arrow
+      }
+    }
+  }
+}
+
+.post-header {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: 800px) {
+    display: block;
+    padding: 0 15px;
+  }
+  grid-gap: 1em;
+  h1:first-child {
+    margin-top: 0;
+  }
+  &--title {
+    padding-bottom: 1em;
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+  }
+  &--meta {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    p {
+      color: #1976d2;
+    }
+    .tags {
+      justify-self: center;
+    }
+  }
+  &--more {
+    // grid-column: span 2;
+    // justify-self: center;
+    margin-top: 2rem;
+  }
+  &--image {
+    figure:not(:first-child) {
+      margin-top: 1em;
+    }
+  }
+}
+
+.post-content {
+  padding-top: 1rem;
+  border-top: 2px solid currentColor;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 3rem;
+  @media screen and (max-width: 800px) {
+    display: block;
+    padding: 0 15px;
+  }
+  .location {
+    h2 {
+      margin-top: 1.5em;
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 0;
+    }
+    iframe {
+      margin-top: 1.5em;
+      margin-bottom: 1em;
+      width: 100%;
+    }
+  }
+}
+.post-body div {
+  padding-bottom: 1rem;
+  &:not(:last-child) {
+    border-bottom: 2px solid currentColor;
+  }
+  @media screen and (max-width: 800px) {
+    padding-bottom: 1.5rem;
+    &:last-child {
+      border-bottom: 2px solid currentColor !important;
+    }
+  }
+}
+
+.post-sidebar {
+  a {
+    display: block;
+    text-align: center;
+  }
+  #current {
+    margin-top: 2rem;
+    article {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+      &:not(:last-child) {
+        border-bottom: 1px solid #eee;
+      }
+      figure {
+        align-self: center;
+      }
+      .event-info {
+        align-self: center;
+        padding: 1em;
+        p {
+          margin: 0;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  border-top: 2px solid currentColor;
+}
